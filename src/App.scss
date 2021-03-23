@@ -31,6 +31,10 @@
     outline: none;
   }
 }
+.container {
+  width: 100%;
+  overflow-x: scroll;
+}
 .coin-table {
   table-layout: auto;
   min-width: 1270px;

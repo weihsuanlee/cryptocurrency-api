@@ -61,7 +61,7 @@ function App() {
           <SkeletonData />
         ) : (
           <div className="container">
-            <table className="coin-table tableFixHead">
+            <table className="coin-table">
               <thead>
                 <tr>
                   <th colspan="2">貨幣</th>

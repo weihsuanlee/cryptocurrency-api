@@ -1,0 +1,11 @@
+.darkmode-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  .MuiSvgIcon-root {
+    font-size: 18px;
+  }
+}

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 64px;
+  padding: 128px 64px;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
@@ -10,7 +10,7 @@
 }
 @media (max-width: 576px) {
   .app {
-    padding: 64px 20px;
+    padding: 128px 20px;
   }
 }
 .coin-search {
@@ -24,6 +24,11 @@
 .coin-text {
   margin-bottom: 32px;
   text-align: center;
+}
+@media (max-width: 576px) {
+  .coin-text {
+    font-size: 24px;
+  }
 }
 .coin-search-input {
   padding-left: 16px;
@@ -86,8 +91,8 @@
   height: 60px;
   border-top: 1px solid rgba(128, 128, 128, 0.274);
   .MuiSkeleton-circle {
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     margin-right: 24px;
   }
 }

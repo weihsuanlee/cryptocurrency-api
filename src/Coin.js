@@ -20,21 +20,21 @@ function Coin(props) {
         <h1>{name}</h1>
       </td>
       <td>
-        <p>{symbol}</p>
+        <span className="coin-symbol">{symbol}</span>
       </td>
       <td className="text-end">
         <span>NT$ {price}</span>
       </td>
       <td className="text-end">
-        <p>NT$ {volume.toLocaleString()}</p>
+        <span>NT$ {volume.toLocaleString()}</span>
       </td>
       <td className="text-center">
-        <p className={`coin-percent ` + (priceChange < 0 ? `red` : `green`)}>
+        <span className={`coin-percent ` + (priceChange < 0 ? `red` : `green`)}>
           {priceChange.toFixed(2)}%
-        </p>
+        </span>
       </td>
       <td className="text-end">
-        <p>NT$ {marketcap.toLocaleString()}</p>
+        <span>NT$ {marketcap.toLocaleString()}</span>
       </td>
       <td>
         <Sparkline data={sparkline_in_7d.price} />

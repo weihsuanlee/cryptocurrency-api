@@ -1,0 +1,35 @@
+.coin-table td {
+  border-top: 1px solid #dee2e6;
+  padding: 8px 16px;
+  height: 60px;
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+.coin {
+  display: flex;
+  align-items: center;
+  img {
+    height: 20px;
+    width: 20px;
+    margin-right: 24px;
+  }
+  h1 {
+    font-size: 0.875rem;
+  }
+}
+.coin-symbol {
+  text-transform: uppercase;
+}
+.text-end {
+  text-align: end;
+}
+.text-center {
+  text-align: center;
+}
+
+.coin-percent.red {
+  color: #e15241;
+}
+.coin-percent.green {
+  color: #23af7d;
+}

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 128px 64px;
+  padding: 128px 64px 64px;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
@@ -10,7 +10,7 @@
 }
 @media (max-width: 576px) {
   .app {
-    padding: 128px 20px;
+    padding: 128px 20px 64px 20px;
   }
 }
 .coin-search {
@@ -72,30 +72,24 @@
     top: 0px;
   }
 }
-.skeleton {
-  width: 100%;
-}
-.skeleton-head {
-  width: 95%;
-  padding: 5px 8px;
-  height: 50px;
+.no-result {
+  width: 160px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  margin-right: auto;
-  margin-left: auto;
-}
-.skeleton-row {
-  display: flex;
-  padding: 8px 16px;
-  align-items: center;
-  height: 60px;
-  border-top: 1px solid rgba(128, 128, 128, 0.274);
-  .MuiSkeleton-circle {
-    height: 18px;
-    width: 18px;
-    margin-right: 24px;
+  .t-rex {
+    text-align: center;
+    .MuiSvgIcon-root {
+      text-align: center;
+      color: #535353;
+      font-size: 32px;
+      transform: translateY(12px);
+    }
+    img {
+      width: 100%;
+    }
   }
 }
-.MuiSkeleton-root {
-  background-color: rgba(128, 128, 128, 0.274) !important;
+.no-result-coin {
+  transform: translate(-46px, 17px);
 }

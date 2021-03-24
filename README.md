@@ -8,6 +8,6 @@
 • 可切換白色/深色背景模式<br/>
 
 • DEMO連結：<br/>
-https://cryptocurrency-api-wei.web.app/<br/>
+https://cryptocurrency-api-wei.web.app/<br/><br/>
 • Github連結：<br/>
 https://github.com/weihsuanlee/cryptocurrency-api<br/>

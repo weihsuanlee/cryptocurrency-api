@@ -1,0 +1,16 @@
+.to-list-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  left: 36px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 14px;
+  }
+  .MuiSvgIcon-root {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+}

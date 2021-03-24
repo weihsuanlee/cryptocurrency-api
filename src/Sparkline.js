@@ -30,7 +30,7 @@ function Sparkline(props) {
           },
           elements: {
             line: {
-              borderColor: upward ? '#23AF7D' : '#e15241',
+              borderColor: upward ? '#e15241' : '#23AF7D',
               backgroundColor: 'transparent',
               borderWidth: 1,
             },

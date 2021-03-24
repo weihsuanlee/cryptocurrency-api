@@ -6,14 +6,6 @@ import './DarkModeSwitch.scss'
 
 export default function DarkModeSwitch(props) {
   const { darkMode, themeToggler } = props
-  const [state, setState] = useState({
-    checkedA: true,
-    checkedB: true,
-  })
-
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked })
-  }
 
   return (
     <div className="darkmode-switch">

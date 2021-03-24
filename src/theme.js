@@ -13,9 +13,10 @@ export const darkTheme = {
 export const GlobalStyles = createGlobalStyle`
     body{
         background-color: ${(props) => props.theme.body};
+        color: ${(props) => props.theme.fontColor};
     }
     .app{
-        color: ${(props) => props.theme.fontColor};
+      color: ${(props) => props.theme.fontColor};
     }
     .coin-search-input{
       background-color: ${(props) => props.theme.inputColor};

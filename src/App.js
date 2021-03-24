@@ -1,108 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './App.scss'
-import axios from './axios'
-import Coin from './Coin'
-import DarkModeSwitch from './DarkModeSwitch'
-import SkeletonData from './SkeletonData'
 import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme, GlobalStyles } from './theme.js'
-import MonetizationOnTwoToneIcon from '@material-ui/icons/MonetizationOnTwoTone'
-import NotListedLocationRoundedIcon from '@material-ui/icons/NotListedLocationRounded'
+import CoinList from './CoinList'
+import WatchList from './WatchList'
+import DarkModeSwitch from './DarkModeSwitch'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { WatchListContextProvider } from './WatchListContext'
 
 function App() {
-  const [coins, setCoins] = useState([])
-  const [search, setSearch] = useState('')
   const [darkMode, setDarkMode] = useState(true)
-  const [isLoading, setIsLoading] = useState(true)
   const themeToggler = () => {
     setDarkMode(!darkMode)
   }
 
-  useEffect(() => {
-    setIsLoading(true)
-    async function fetchData() {
-      const request = await axios.get('coins/markets/', {
-        params: {
-          vs_currency: 'twd',
-          sparkline: 'true',
-          per_page: 100,
-        },
-      })
-      setCoins(request.data)
-      console.log(request.data)
-      return request
-    }
-    fetchData()
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
-  }, [])
-
-  const filteredCoins = coins.filter((coin) =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
-  )
-
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <GlobalStyles />
-      <div className="app">
+      <WatchListContextProvider>
+        <GlobalStyles />
         <DarkModeSwitch themeToggler={themeToggler} darkMode={darkMode} />
-        <div className="coin-search">
-          <h1 className="coin-text">Search a currency</h1>
-          <form>
-            <input
-              type="text"
-              value={search}
-              placeholder="Search"
-              className="coin-search-input"
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </form>
-        </div>
-        {isLoading ? (
-          <SkeletonData />
-        ) : (
-          <div className="container">
-            {filteredCoins.length > 0 ? (
-              <table className="coin-table">
-                <thead>
-                  <tr>
-                    <th colspan="2">貨幣</th>
-                    <th>匯率</th>
-                    <th>24小時交易量</th>
-                    <th>24小時匯率變化</th>
-                    <th>總市值</th>
-                    <th>最近7天</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredCoins.map((coin) => (
-                    <Coin
-                      key={coin.id}
-                      name={coin.name}
-                      image={coin.image}
-                      symbol={coin.symbol}
-                      marketcap={coin.market_cap}
-                      price={coin.current_price}
-                      priceChange={coin.price_change_percentage_24h}
-                      volume={coin.total_volume}
-                      sparkline_in_7d={coin.sparkline_in_7d}
-                    />
-                  ))}
-                </tbody>
-              </table>
-            ) : (
-              <div className="no-result">
-                <div className="t-rex">
-                  <NotListedLocationRoundedIcon />
-                  <img src="../../images/notfound.png" alt="no-result" />
-                </div>
-                <MonetizationOnTwoToneIcon className="no-result-coin"/>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <CoinList />
+            </Route>
+            <Route exact path="/watchlist">
+              <WatchList />
+            </Route>
+          </Switch>
+        </Router>
+      </WatchListContextProvider>
     </ThemeProvider>
   )
 }

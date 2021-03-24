@@ -6,54 +6,52 @@ import './SkeletonData.scss'
 
 export default function SkeletonData() {
   return (
-    <>
-      <div className="skeleton">
-        <div className="skeleton-head">
-          <Skeleton width="100%">
-            <Typography>-</Typography>
-          </Skeleton>
-        </div>
-        <div className="skeleton-row">
-          <Skeleton variant="circle">
-            <Avatar />
-          </Skeleton>
-          <Skeleton width="100%">
-            <Typography>-</Typography>
-          </Skeleton>
-        </div>
-        <div className="skeleton-row">
-          <Skeleton variant="circle">
-            <Avatar />
-          </Skeleton>
-          <Skeleton width="100%">
-            <Typography>-</Typography>
-          </Skeleton>
-        </div>
-        <div className="skeleton-row">
-          <Skeleton variant="circle">
-            <Avatar />
-          </Skeleton>
-          <Skeleton width="100%">
-            <Typography>-</Typography>
-          </Skeleton>
-        </div>
-        <div className="skeleton-row">
-          <Skeleton variant="circle">
-            <Avatar />
-          </Skeleton>
-          <Skeleton width="100%">
-            <Typography>-</Typography>
-          </Skeleton>
-        </div>
-        <div className="skeleton-row">
-          <Skeleton variant="circle">
-            <Avatar />
-          </Skeleton>
-          <Skeleton width="100%">
-            <Typography>-</Typography>
-          </Skeleton>
-        </div>
+    <div className="skeleton">
+      <div className="skeleton-head">
+        <Skeleton width="100%">
+          <Typography>-</Typography>
+        </Skeleton>
       </div>
-    </>
+      <div className="skeleton-row">
+        <Skeleton variant="circle">
+          <Avatar />
+        </Skeleton>
+        <Skeleton width="100%">
+          <Typography>-</Typography>
+        </Skeleton>
+      </div>
+      <div className="skeleton-row">
+        <Skeleton variant="circle">
+          <Avatar />
+        </Skeleton>
+        <Skeleton width="100%">
+          <Typography>-</Typography>
+        </Skeleton>
+      </div>
+      <div className="skeleton-row">
+        <Skeleton variant="circle">
+          <Avatar />
+        </Skeleton>
+        <Skeleton width="100%">
+          <Typography>-</Typography>
+        </Skeleton>
+      </div>
+      <div className="skeleton-row">
+        <Skeleton variant="circle">
+          <Avatar />
+        </Skeleton>
+        <Skeleton width="100%">
+          <Typography>-</Typography>
+        </Skeleton>
+      </div>
+      <div className="skeleton-row">
+        <Skeleton variant="circle">
+          <Avatar />
+        </Skeleton>
+        <Skeleton width="100%">
+          <Typography>-</Typography>
+        </Skeleton>
+      </div>
+    </div>
   )
 }

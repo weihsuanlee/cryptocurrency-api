@@ -30,7 +30,7 @@ function CoinList(props) {
     fetchData()
     setTimeout(() => {
       setIsLoading(false)
-    }, 1500)
+    }, 2000)
   }, [])
 
   const filteredCoins = coins.filter((coin) =>

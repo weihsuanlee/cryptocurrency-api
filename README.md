@@ -1,4 +1,4 @@
-[React/API] CoinGecko加密貨幣追蹤
+<strong>[React/API] CoinGecko加密貨幣追蹤</strong>
 
 • 使用 React 實作<br/>
 • 使用 CoinGecko API 獲取電影資料<br/>

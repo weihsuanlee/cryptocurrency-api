@@ -24,13 +24,11 @@ function CoinList(props) {
         },
       })
       setCoins(request.data)
+      setIsLoading(false)
       //   console.log(request.data)
       return request
     }
     fetchData()
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
   }, [])
 
   const filteredCoins = coins.filter((coin) =>

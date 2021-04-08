@@ -12,13 +12,8 @@ function WatchList(props) {
   const [watchListCoins, setWatchListCoins] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   //   console.log(localStorage.getItem('crypto-watchlist'))
-
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1800)
-  }, [])
-  useEffect(() => {
+    setIsLoading(true)
     async function fetchData() {
       const request = await axios.get('coins/markets/', {
         params: {
@@ -29,12 +24,14 @@ function WatchList(props) {
       })
       //   console.log(request.data)
       setWatchListCoins(request.data)
+      setIsLoading(false)
       return request
     }
     if (watchList.length > 0) {
       fetchData()
     } else {
       setWatchListCoins([])
+      setIsLoading(false)
     }
   }, [watchList])
   return (
